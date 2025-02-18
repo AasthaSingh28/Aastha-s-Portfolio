@@ -1,8 +1,9 @@
-"use client"; // Ensure this runs on the client side
+"use client";
 
 import React from "react";
 import Image from "next/image";
 import { Button } from "./ui/button";
+import Link from "next/link";
 
 interface Project {
     title: string;
@@ -24,20 +25,13 @@ const projectData: Project[] = [
     },
     {
         title: "Responsive Dashboard",
-        description: "This is a responsive dashboard created using Next.js and ShadCN UI.",
+        description: "This is a responsive dashboard created using Next.js and Shadcn UI.",
         link: "https://responsive-dashboard-3nmb.vercel.app/",
         code: "https://github.com/AasthaSingh28/ResponsiveDashboard",
         previewImage: "/images/dash.png",
         technologies: ["Next.js", "Tailwind"],
     },
-    {
-        title: "Project 3",
-        description: "This is a description of project 3.",
-        link: "https://example.com/project3",
-        code: "https://github.com/user/project3",
-        previewImage: "/images/project3.png",
-        technologies: ["MongoDB", "Express"],
-    },
+
     {
         title: "CodePlus-CodePen-Clone",
         description: "This is a CodePen clone created using React.js focusing on responsiveness.",
@@ -75,19 +69,13 @@ const Project = () => {
                                     </div>
                                 ))}
                             </div>
-                            <div className="flex gap-2 mt-2">
-                                <Button
-                                    variant="default"
-                                    onClick={() => window.open(item.link, "_blank")}
-                                >
-                                    View
-                                </Button>
-                                <Button
-                                    variant="outline"
-                                    onClick={() => window.open(item.code, "_blank")}
-                                >
-                                    Code
-                                </Button>
+                            <div className="flex gap-2 mt-2 relative z-50">
+                                <a href={item.link} target="_blank" rel="noopener noreferrer">
+                                    <Button variant="default" >View</Button>
+                                </a>
+                                <a href={item.code} target="_blank" rel="noopener noreferrer">
+                                    <Button variant="outline" >Code</Button>
+                                </a>
                             </div>
                         </div>
                     </div>

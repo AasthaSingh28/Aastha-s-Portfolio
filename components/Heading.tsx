@@ -2,7 +2,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { MorphingText } from './magicui/morphing-text'
-import Bento from './Bento';
+
 import { BoxReveal } from './magicui/box-reveal';
 
 

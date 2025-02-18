@@ -2,7 +2,8 @@ import React from 'react';
 import { TypingAnimation } from './magicui/typing-animation';
 import { InteractiveHoverButton } from './magicui/interactive-hover-button';
 import { InteractiveGridPattern } from './magicui/interactive-grid-pattern';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import Link from 'next/link';
 
 const ContactMe = () => {
     return (
@@ -14,18 +15,23 @@ const ContactMe = () => {
             </div>
 
             <div className="flex justify-center">
-                <InteractiveHoverButton>Let's get in touch.</InteractiveHoverButton>
+                <Link href="mailto:aasthasinghddun@gmail.com">
+                    <InteractiveHoverButton >Let's get in touch.</InteractiveHoverButton>
+                </Link>
+
             </div>
 
             {/* Footer */}
             <footer className="w-full mt-10 py-6 border-t border-gray-600 text-center">
                 <div className="flex justify-center gap-6 text-2xl">
-                    <a href="https://github.com/AasthaSingh28" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transition">
+                    <a href="https://github.com/AasthaSingh28" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transition z-50" >
                         <FaGithub />
                     </a>
-                    <a href="https://www.linkedin.com/in/aastha-singh-0167b3257/" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transition">
+
+                    <a href="https://www.linkedin.com/in/aastha-singh-0167b3257/" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transition z-50" >
                         <FaLinkedin />
                     </a>
+
 
                 </div>
                 <p className="text-sm mt-3 text-gray-500">© 2025 Aastha Singh. All Rights Reserved.</p>

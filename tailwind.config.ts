@@ -160,6 +160,14 @@ const config = {
   					bottom: '50%',
   					right: '25%'
   				}
+  			},
+  			ripple: {
+  				'0%, 100%': {
+  					transform: 'translate(-50%, -50%) scale(1)'
+  				},
+  				'50%': {
+  					transform: 'translate(-50%, -50%) scale(0.9)'
+  				}
   			}
   		},
   		animation: {
@@ -170,7 +178,8 @@ const config = {
   			marquee: 'marquee var(--duration) infinite linear',
   			'marquee-vertical': 'marquee-vertical var(--duration) linear infinite',
   			'shimmer-slide': 'shimmer-slide var(--speed) ease-in-out infinite alternate',
-  			'spin-around': 'spin-around calc(var(--speed) * 2) infinite linear'
+  			'spin-around': 'spin-around calc(var(--speed) * 2) infinite linear',
+  			ripple: 'ripple var(--duration,2s) ease calc(var(--i, 0)*.2s) infinite'
   		},
   		colors: {
   			'color-1': 'hsl(var(--color-1))',
