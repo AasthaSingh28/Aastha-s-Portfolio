@@ -28,7 +28,7 @@ const Heading = () => {
 
                 <p className='text-base dark:text-gray-400 text-gray-700'>
                     I am Aastha Singh, a dedicated 3rd-year IT student with a strong passion for web development. With proficiency in both C and C++, my current technical focus is on mastering the MERN stack (MongoDB, Express.js, React.js, Node.js) to develop robust and scalable web applications. I am actively exploring Next.js to broaden my expertise and become a versatile full-stack developer.
-                    Let's connect and explore opportunities for collaboration and growth in the exciting field of web development.
+                    Let&apos;s connect and explore opportunities for collaboration and growth in the exciting field of web development.
                 </p>
             </div>
 

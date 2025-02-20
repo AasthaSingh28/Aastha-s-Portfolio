@@ -16,7 +16,7 @@ const ContactMe = () => {
 
             <div className="flex justify-center">
                 <Link href="mailto:aasthasinghddun@gmail.com">
-                    <InteractiveHoverButton >Let's get in touch.</InteractiveHoverButton>
+                    <InteractiveHoverButton >Let&apos;s get in touch.</InteractiveHoverButton>
                 </Link>
 
             </div>

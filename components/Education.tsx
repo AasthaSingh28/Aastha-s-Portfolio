@@ -38,7 +38,7 @@ const Education = () => {
             <h1 className='text-lg font-bold'> Education </h1>
 
             <ol className="relative border-s border-gray-200 dark:border-gray-700">
-                {EduData.map((item, index) => (
+                {EduData.map((item) => (  // Removed `index`
                     <li key={`${item.collegeName}-${item.startDate}`} className="mb-10 ms-4">
                         <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
                         <time className="mb-1 text-sm font-normal leading-none dark:text-gray-400 text-gray-700">
@@ -53,5 +53,6 @@ const Education = () => {
         </div>
     );
 };
+
 
 export default Education;

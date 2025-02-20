@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { Marquee } from "./magicui/marquee";
+import Image from "next/image";
 
 const languages = [
     { name: "HTML", img: "/images/html.jpg" },
@@ -8,7 +9,7 @@ const languages = [
     { name: "TYPESCRIPT", img: "/images/ts.png" },
     { name: "C++", img: "/images/c.jpg" },
     { name: "C", img: "/images/cl.png" },
-    { name: "PYTHON", img: "/images/py.png" },
+    { name: "PYTHON", img: "/images/py.jpg" },
 ];
 
 const frameworks = [
@@ -34,7 +35,7 @@ const ReviewCard = ({ img, name }: { img: string; name: string }) => {
             )}
         >
             <div className="flex flex-row items-center gap-2">
-                <img className="rounded-full" width="32" height="32" alt={name} src={img} />
+                <Image className="rounded-full" width="32" height="32" alt={name} src={img} />
                 <div className="flex flex-col">
                     <figcaption className="text-sm font-medium dark:text-white">
                         {name}

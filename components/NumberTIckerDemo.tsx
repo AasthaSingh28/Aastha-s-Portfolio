@@ -1,5 +1,6 @@
 import { NumberTicker } from "@/components/magicui/number-ticker";
 import { Ripple } from "./magicui/ripple";
+import { TypingAnimation } from "./magicui/typing-animation";
 
 
 export function NumberTickerDemo() {
@@ -8,7 +9,7 @@ export function NumberTickerDemo() {
             <Ripple />
             <div className=" text-center">
                 <h1 className="text-4xl font-bold mb-4 text-gray-800 dark:text-gray-200">
-                    Loading Page....
+                    <TypingAnimation>Loading Portfolio...</TypingAnimation>
 
                 </h1>
 

@@ -46,16 +46,20 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
     const mousey = useMotionValue(Infinity);
 
     const renderChildren = () => {
-      return React.Children.map(children, (child: any) => {
-        return React.cloneElement(child, {
-          size: iconSize,
-          magnification: iconMagnification,
-          distance: iconDistance,
-          mousex,
-          mousey,
-        });
+      return React.Children.map(children, (child) => {
+        if (React.isValidElement<DockIconProps>(child)) {
+          return React.cloneElement(child, {
+            size: iconSize,
+            magnification: iconMagnification,
+            distance: iconDistance,
+            mousex,
+            mousey,
+          });
+        }
+        return child;
       });
     };
+
 
     return (
       <motion.div
@@ -110,14 +114,19 @@ const DockIcon = ({
   const defaultmousex = useMotionValue(Infinity);
   const defaultmousey = useMotionValue(Infinity);
 
+  // Calculate horizontal distance for scaling
   const distanceCalc = useTransform(mousex ?? defaultmousex, (val: number) => {
     const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
     return val - bounds.x - bounds.width / 2;
   });
 
+  // Fix: Constrain vertical tilt or disable when used in footer
   const verticalTilt = useTransform(mousey ?? defaultmousey, (val: number) => {
     const bounds = ref.current?.getBoundingClientRect() ?? { y: 0, height: 0 };
-    return (val - bounds.y - bounds.height / 2) / 20;
+
+    // Avoid flipping in the footer by limiting rotation
+    const tilt = (val - bounds.y - bounds.height / 2) / 20;
+    return Math.min(Math.max(tilt, -5), 5); // Limit rotation between -5deg to 5deg
   });
 
   const sizeTransform = useTransform(
@@ -142,7 +151,7 @@ const DockIcon = ({
         height: scaleSize,
         padding,
         y: elevation,
-        rotateX: verticalTilt,
+        rotateX: verticalTilt, // If needed, replace with `rotateX: 0` when used in the footer.
       }}
       className={cn(
         "flex aspect-square cursor-pointer items-center justify-center rounded-full transition-all",
@@ -154,6 +163,7 @@ const DockIcon = ({
     </motion.div>
   );
 };
+
 
 DockIcon.displayName = "DockIcon";
 

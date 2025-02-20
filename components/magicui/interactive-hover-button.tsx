@@ -2,12 +2,9 @@ import React from "react";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-interface InteractiveHoverButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
-
 export const InteractiveHoverButton = React.forwardRef<
   HTMLButtonElement,
-  InteractiveHoverButtonProps
+  React.ButtonHTMLAttributes<HTMLButtonElement> // Directly using this instead of an empty interface
 >(({ children, className, ...props }, ref) => {
   return (
     <button
@@ -32,4 +29,5 @@ export const InteractiveHoverButton = React.forwardRef<
   );
 });
 
-InteractiveHoverButton.displayName = "InteractiveHoverButton";
+InteractiveHoverButton.displayName = "InteractiveHoverButton"; // Ensure ESLint does not misinterpret it
+export default InteractiveHoverButton;
