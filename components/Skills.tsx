@@ -6,7 +6,9 @@ const languages = [
     { name: "CSS", img: "/images/css.jpg" },
     { name: "JAVASCRIPT", img: "/images/js.jpg" },
     { name: "TYPESCRIPT", img: "/images/ts.png" },
-    { name: "C++ and DSA", img: "/images/c.jpg" },
+    { name: "C++", img: "/images/c.jpg" },
+    { name: "C", img: "/images/cl.png" },
+    { name: "PYTHON", img: "/images/py.png" },
 ];
 
 const frameworks = [

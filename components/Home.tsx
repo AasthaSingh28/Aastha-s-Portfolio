@@ -30,7 +30,7 @@ export default function Home() {
             ) : (
                 <div>
                     <DockDemo />
-                    <div className="relative w-9/12 mx-auto items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] overflow-hidden">
+                    <div className="relative lg:w-9/12 md:w-7/12 sm:w-full mx-auto items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p- font-[family-name:var(--font-geist-sans)] overflow-hidden">
                         <InteractiveGridPattern className="absolute inset-0 opacity-10" />
                         <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start w-full">
                             <Meteors />
