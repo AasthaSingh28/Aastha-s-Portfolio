@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 interface NumberTickerProps extends ComponentPropsWithoutRef<"span"> {
   value: number;
   direction?: "up" | "down";
-  delay?: number; // delay in s
+  delay?: number; // delay in seconds
   decimalPlaces?: number;
 }
 
@@ -29,31 +29,32 @@ export function NumberTicker({
   const isInView = useInView(ref, { once: true, margin: "0px" });
 
   useEffect(() => {
-    isInView &&
+    if (isInView) {
       setTimeout(() => {
         motionValue.set(direction === "down" ? 0 : value);
       }, delay * 1000);
+    }
   }, [motionValue, isInView, delay, value, direction]);
 
-  useEffect(
-    () =>
-      springValue.on("change", (latest) => {
-        if (ref.current) {
-          ref.current.textContent = Intl.NumberFormat("en-US", {
-            minimumFractionDigits: decimalPlaces,
-            maximumFractionDigits: decimalPlaces,
-          }).format(Number(latest.toFixed(decimalPlaces)));
-        }
-      }),
-    [springValue, decimalPlaces],
-  );
+  useEffect(() => {
+    const unsubscribe = springValue.on("change", (latest) => {
+      if (ref.current) {
+        ref.current.textContent = Intl.NumberFormat("en-US", {
+          minimumFractionDigits: decimalPlaces,
+          maximumFractionDigits: decimalPlaces,
+        }).format(Number(latest.toFixed(decimalPlaces)));
+      }
+    });
+
+    return () => unsubscribe(); // ✅ Cleanup function
+  }, [springValue, decimalPlaces]);
 
   return (
     <span
       ref={ref}
       className={cn(
         "inline-block tabular-nums tracking-wider text-black dark:text-white",
-        className,
+        className
       )}
       {...props}
     />
