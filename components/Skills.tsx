@@ -48,8 +48,8 @@ const ReviewCard = ({ img, name }: { img: string; name: string }) => {
 
 export function MarqueeDemo() {
     return (
-        <div className="flex flex-col gap-4">
-            <h1 className="text-lg font-bold">Technical Skills</h1>
+        <div className="flex flex-col gap-4 max-w-screen-sm mx-auto px-4">
+            <h1 className="text-lg text-black dark:text-white font-bold">Technical Skills</h1>
 
             {/* Programming Languages - Left to Right */}
             <div className="flex flex-col z-50">
@@ -64,7 +64,7 @@ export function MarqueeDemo() {
             </div>
 
             {/* Frameworks & Libraries - Right to Left */}
-            <div className="flex flex-col  z-50">
+            <div className="flex flex-col z-50">
                 <h2 className="text-base font-semibold">Frameworks & Libraries</h2>
                 <div className="relative w-full overflow-hidden">
                     <Marquee direction="left" pauseOnHover className="[--duration:20s]">
