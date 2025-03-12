@@ -29,7 +29,7 @@ const ReviewCard = ({ img, name }: { img: string; name: string }) => {
     return (
         <figure
             className={cn(
-                "relative h-full w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
+                "relative h-full w-48 md:w-64 cursor-pointer overflow-hidden rounded-xl border p-4 mx-2",
                 "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
                 "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]"
             )}
@@ -48,12 +48,12 @@ const ReviewCard = ({ img, name }: { img: string; name: string }) => {
 
 export function MarqueeDemo() {
     return (
-        <div className="flex flex-col gap-4 max-w-screen-sm mx-auto px-4">
-            <h1 className="text-lg text-black dark:text-white font-bold">Technical Skills</h1>
+        <div className="w-full max-w-full px-4 md:px-8 lg:px-12">
+            <h1 className="text-lg text-black dark:text-white font-bold mb-6">Technical Skills</h1>
 
             {/* Programming Languages - Left to Right */}
-            <div className="flex flex-col z-50">
-                <h2 className="text-base font-semibold">Programming Languages</h2>
+            <div className="flex flex-col z-50 mb-8">
+                <h2 className="text-base font-semibold mb-4">Programming Languages</h2>
                 <div className="relative w-full overflow-hidden">
                     <Marquee direction="right" pauseOnHover className="[--duration:20s]">
                         {languages.map((skill) => (
@@ -64,8 +64,8 @@ export function MarqueeDemo() {
             </div>
 
             {/* Frameworks & Libraries - Right to Left */}
-            <div className="flex flex-col z-50">
-                <h2 className="text-base font-semibold">Frameworks & Libraries</h2>
+            <div className="flex flex-col z-50 mb-8">
+                <h2 className="text-base font-semibold mb-4">Frameworks & Libraries</h2>
                 <div className="relative w-full overflow-hidden">
                     <Marquee direction="left" pauseOnHover className="[--duration:20s]">
                         {frameworks.map((skill) => (
@@ -76,8 +76,8 @@ export function MarqueeDemo() {
             </div>
 
             {/* Tools & Databases - Left to Right */}
-            <div className="flex flex-col z-50">
-                <h2 className="text-base font-semibold">Tools & Databases</h2>
+            <div className="flex flex-col z-50 mb-8">
+                <h2 className="text-base font-semibold mb-4">Tools & Databases</h2>
                 <div className="relative w-full overflow-hidden">
                     <Marquee direction="right" pauseOnHover className="[--duration:20s]">
                         {tools.map((skill) => (
