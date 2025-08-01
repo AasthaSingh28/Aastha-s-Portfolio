@@ -36,7 +36,7 @@ const ReviewCard = ({ img, name }: { img: string; name: string }) => {
     >
       <div className="flex flex-row items-center gap-3">
         <Image
-          className="rounded-full border border-emerald-500"
+          className="rounded-full object-cover border border-emerald-500"
           width="40"
           height="40"
           alt={name}
