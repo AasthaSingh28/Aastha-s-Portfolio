@@ -44,8 +44,10 @@ const projectData: Project[] = [
 
 const Project = () => {
     return (
-        <div className="flex flex-col gap-4">
-            <h1 className="text-lg font-bold">Projects</h1>
+        <div className="flex flex-col gap-4 mt-4 max-w-7xl">
+           <h2 className="text-3xl font-bold mb-8 text-emerald-500 dark:text-cyan-400 tracking-tight">
+        Projects
+      </h2>
             <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-4">
                 {projectData.map((item, projectIndex) => (
                     <div key={`project-${projectIndex}`} className="flex flex-col border border-gray-100 rounded-md overflow-hidden">
