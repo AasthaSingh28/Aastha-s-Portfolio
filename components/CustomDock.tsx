@@ -1,11 +1,11 @@
 "use client";
 
 import {
-  CalendarIcon,
+ 
   HomeIcon,
   MailIcon,
   Moon,
-  PencilIcon,
+ 
   Sun,
 } from "lucide-react";
 import Link from "next/link";
@@ -22,9 +22,7 @@ import {
 import { cn } from "@/lib/utils";
 import { Dock, DockIcon } from "./magicui/dock";
 
-interface DockDemoProps {
-  direction?: "top" | "middle" | "bottom";
-}
+
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
 

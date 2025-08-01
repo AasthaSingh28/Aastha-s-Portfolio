@@ -19,7 +19,7 @@ const ContactMe = () => {
           Get in touch and Contact me.
         </TypingAnimation>
         <p className="mt-4 text-sm text-gray-500 dark:text-gray-400 max-w-md mx-auto">
-          I'm open to exciting collaborations, internships, and tech projects. Feel free to drop a message!
+          I&apos;m open to exciting collaborations, internships, and tech projects. Feel free to drop a message!
         </p>
       </div>
 
